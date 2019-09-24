@@ -9,3 +9,6 @@ bot.on('new_chat_members', (ctx) => {
 })
 
 bot.launch()
+  .then(() => {
+    console.log('TensorFriend funcionando!')
+  })
