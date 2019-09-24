@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/gabrielrufino/TensorFriend/issues"
   },
-  "homepage": "https://github.com/gabrielrufino/TensorFriend#readme"
+  "homepage": "https://github.com/gabrielrufino/TensorFriend#readme",
+  "dependencies": {
+    "telegraf": "^3.32.0"
+  }
 }
