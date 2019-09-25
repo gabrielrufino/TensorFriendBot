@@ -11,6 +11,10 @@ bot.on('new_chat_members', (context) => {
   )
 })
 
+bot.catch(error => {
+  console.log('Algo deu errado!', error)
+})
+
 bot.launch()
   .then(() => {
     console.log('TensorFriend funcionando!')
