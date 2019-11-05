@@ -8,6 +8,11 @@
     "dev": "nodemon index.js",
     "lint": "standard"
   },
+  "husky": {
+    "hooks": {
+      "pre-push": "npm run lint"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gabrielrufino/TensorFriend.git"
