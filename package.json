@@ -24,7 +24,10 @@
   },
   "homepage": "https://github.com/gabrielrufino/TensorFriend#readme",
   "dependencies": {
+    "cron": "^1.7.2",
     "dotenv": "^8.1.0",
+    "moment": "^2.24.0",
+    "newsapi": "^2.4.0",
     "telegraf": "^3.32.0"
   },
   "devDependencies": {
