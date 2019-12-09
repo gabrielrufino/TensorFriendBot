@@ -13,7 +13,7 @@ const searchNews = (data) => {
     'Machine Learning',
     'TensorFlow',
     'TensorFlow.js',
-    'Inteligência Artificial',
+    'Inteligência Artificial'
   ]
 
   new CronJob('0 59 23 * * *', async () => {

@@ -5,7 +5,7 @@ const sendNews = (bot, data) => {
 
   new CronJob('0 0 */8 * * *', () => {
     const news = data.news.shift()
- 
+
     if (news) {
       bot.telegram.sendMessage(GROUP_CHAT_ID, news.url)
     }
