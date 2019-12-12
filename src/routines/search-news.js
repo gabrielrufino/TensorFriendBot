@@ -34,7 +34,7 @@ const searchNews = (data) => {
     const articles = responses.map(response => response.articles).flat()
 
     data.news.push(...articles)
-  }).start()
+  }, null, false, 'America/Sao_Paulo').start()
 }
 
 module.exports = searchNews
