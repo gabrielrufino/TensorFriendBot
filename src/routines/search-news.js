@@ -33,6 +33,8 @@ const searchNews = (data) => {
 
     const articles = responses.map(response => response.articles).flat()
 
+    articles.sort(() => Math.random() - 0.5)
+
     data.news.push(...articles)
   }, null, false, 'America/Sao_Paulo').start()
 }
