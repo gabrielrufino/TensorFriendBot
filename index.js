@@ -1,6 +1,7 @@
 require('dotenv').config()
 
 const Telegraf = require('telegraf')
+const api = require('./src/api')
 const commands = require('./src/commands')
 const events = require('./src/events')
 const routines = require('./src/routines')
