@@ -4,7 +4,7 @@
   "description": "Bot do grupo @tensorflowjs_br do telegram",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --passWithNoTests",
     "dev": "nodemon index.js",
     "lint": "standard",
     "start": "node index.js"
@@ -31,6 +31,7 @@
     "cron": "^1.7.2",
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
+    "jest": "^24.9.0",
     "moment": "^2.24.0",
     "newsapi": "^2.4.0",
     "telegraf": "^3.32.0"
