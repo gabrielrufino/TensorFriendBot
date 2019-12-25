@@ -1,9 +1,13 @@
-const express = require('express')
+const api = () => {
+  const express = require('express')
+  
+  const app = express()
+  
+  app.get('/', (_, response) => {
+    response.json({ alive: true })
+  })
+  
+  app.listen(process.env.PORT || 8080)
+}
 
-const app = express()
-
-app.get('/', (_, response) => {
-  response.json({ alive: true })
-})
-
-app.listen(process.env.PORT || 8080)
+module.exports = api

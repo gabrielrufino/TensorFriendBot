@@ -12,6 +12,7 @@ const data = {
   news: []
 }
 
+api()
 commands(bot)
 routines(bot, data)
 events(bot)
