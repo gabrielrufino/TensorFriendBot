@@ -15,7 +15,9 @@
     }
   },
   "standard": {
-    "env": ["jest"]
+    "env": [
+      "jest"
+    ]
   },
   "repository": {
     "type": "git",
@@ -30,6 +32,7 @@
   "dependencies": {
     "@tensorflow-models/mobilenet": "^2.0.4",
     "@tensorflow/tfjs-node": "^1.4.0",
+    "amqplib": "^0.5.5",
     "axios": "^0.19.0",
     "cron": "^1.7.2",
     "dotenv": "^8.1.0",
