@@ -7,7 +7,7 @@ const searchNews = async (helpers) => {
   const { AMQP_URL, NEWS_API_KEY } = process.env
 
   const newsapi = new NewsAPI(NEWS_API_KEY)
-  
+
   const connection = await amqp.connect(AMQP_URL)
   const channel = await connection.createChannel()
 
