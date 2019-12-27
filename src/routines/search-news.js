@@ -28,7 +28,7 @@ const searchNews = async (helpers) => {
     'https://www.nextbigfuture.com/tag/artificial-intelligence'
   ]
 
-  new CronJob('0 52 23 * * *', async () => {
+  new CronJob('0 59 23 * * *', async () => {
     const today = moment().format('YYYY-MM-DD')
 
     const responses = await Promise.all(
