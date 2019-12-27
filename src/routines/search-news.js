@@ -24,7 +24,11 @@ const searchNews = async (helpers) => {
     'Inteligência Artificial'
   ]
 
-  new CronJob('0 59 23 * * *', async () => {
+  const blacklist = [
+    'https://www.nextbigfuture.com/tag/artificial-intelligence'
+  ]
+
+  new CronJob('0 52 23 * * *', async () => {
     const today = moment().format('YYYY-MM-DD')
 
     const responses = await Promise.all(
@@ -39,7 +43,9 @@ const searchNews = async (helpers) => {
     )
 
     const articles = responses.map(response => response.articles).flat()
-    const urls = helpers.removeRepetitions(articles.map(article => article.url))
+    const urls = helpers
+      .removeRepetitions(articles.map(article => article.url))
+      .filter(url => !blacklist.includes(url))
 
     urls.sort(() => Math.random() - 0.5)
 
