@@ -1,11 +1,19 @@
+const amqp = require('amqplib')
 const CronJob = require('cron').CronJob
-const NewsAPI = require('newsapi')
 const moment = require('moment')
+const NewsAPI = require('newsapi')
 
-const searchNews = (data) => {
-  const { NEWS_API_KEY } = process.env
+const searchNews = async (helpers) => {
+  const { AMQP_URL, NEWS_API_KEY } = process.env
 
   const newsapi = new NewsAPI(NEWS_API_KEY)
+  
+  const connection = await amqp.connect(AMQP_URL)
+  const channel = await connection.createChannel()
+
+  const queue = 'news'
+
+  await channel.assertQueue(queue, { durable: true })
 
   const queries = [
     'Aprendizado de Máquina',
@@ -25,17 +33,19 @@ const searchNews = (data) => {
         .topHeadlines({
           q: query,
           from: today,
-          to: today,
-          sortBy: 'relevancy'
+          to: today
         })
       )
     )
 
     const articles = responses.map(response => response.articles).flat()
+    const urls = helpers.removeRepetitions(articles.map(article => article.url))
 
-    articles.sort(() => Math.random() - 0.5)
+    urls.sort(() => Math.random() - 0.5)
 
-    data.news.push(...articles)
+    urls.forEach(url => {
+      channel.sendToQueue(queue, Buffer.from(url))
+    })
   }, null, false, 'America/Sao_Paulo').start()
 }
 

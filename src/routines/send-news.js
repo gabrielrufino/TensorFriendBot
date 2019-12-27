@@ -1,13 +1,21 @@
+const amqp = require('amqplib')
 const CronJob = require('cron').CronJob
 
-const sendNews = (bot, data) => {
-  const { GROUP_CHAT_ID } = process.env
+const sendNews = async (bot) => {
+  const { AMQP_URL, GROUP_CHAT_ID } = process.env
 
-  new CronJob('0 0 7,19 * * *', () => {
-    const news = data.news.shift()
+  const connection = await amqp.connect(AMQP_URL)
+  const channel = await connection.createChannel()
+
+  const queue = 'news'
+
+  await channel.assertQueue(queue, { durable: true })
+
+  new CronJob('0 0 7,19 * * *', async () => {
+    const news = await channel.get(queue, { noAck: true })
 
     if (news) {
-      bot.telegram.sendMessage(GROUP_CHAT_ID, news.url)
+      bot.telegram.sendMessage(GROUP_CHAT_ID, news.content.toString())
     }
   }, null, false, 'America/Sao_Paulo').start()
 }

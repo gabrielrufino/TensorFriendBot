@@ -9,13 +9,9 @@ const routines = require('./src/routines')
 
 const bot = new Telegraf(process.env.BOT_TOKEN)
 
-const data = {
-  news: []
-}
-
 api()
 commands(bot)
-routines(bot, data, helpers)
+routines(bot, helpers)
 events(bot)
 
 bot.catch(error => {
