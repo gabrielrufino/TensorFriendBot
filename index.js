@@ -22,3 +22,6 @@ bot.launch()
   .then(() => {
     console.log('TensorFriend funcionando!')
   })
+  .catch(error => {
+    console.error(error)
+  })
