@@ -6,8 +6,9 @@
   "scripts": {
     "test": "jest --passWithNoTests",
     "dev": "nodemon index.js",
+    "forever": "forever",
     "lint": "standard",
-    "start": "node index.js"
+    "start": "forever index.js"
   },
   "husky": {
     "hooks": {
@@ -37,6 +38,7 @@
     "cron": "^1.7.2",
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
+    "forever": "^1.0.0",
     "jest": "^24.9.0",
     "moment": "^2.24.0",
     "newsapi": "^2.4.0",
