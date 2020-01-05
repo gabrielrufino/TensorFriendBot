@@ -2,6 +2,7 @@ const amqp = require('amqplib')
 const CronJob = require('cron').CronJob
 const moment = require('moment')
 const NewsAPI = require('newsapi')
+const { sleep } = require('sleep')
 
 const searchNews = async (helpers) => {
   const { AMQP_URL, NEWS_API_KEY } = process.env
@@ -52,6 +53,8 @@ const searchNews = async (helpers) => {
     urls.forEach(url => {
       channel.sendToQueue(queue, Buffer.from(url))
     })
+
+    sleep(1)
   }, null, false, 'America/Sao_Paulo').start()
 }
 

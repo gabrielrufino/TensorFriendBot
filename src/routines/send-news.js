@@ -17,6 +17,8 @@ const sendNews = async (bot) => {
     if (news) {
       bot.telegram.sendMessage(GROUP_CHAT_ID, news.content.toString())
     }
+
+    sleep(1)
   }, null, false, 'America/Sao_Paulo').start()
 }
 
