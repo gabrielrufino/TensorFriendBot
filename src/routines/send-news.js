@@ -1,5 +1,6 @@
 const amqp = require('amqplib')
 const CronJob = require('cron').CronJob
+const { sleep } = require('sleep')
 
 const sendNews = async (bot) => {
   const { AMQP_URL, GROUP_CHAT_ID } = process.env
