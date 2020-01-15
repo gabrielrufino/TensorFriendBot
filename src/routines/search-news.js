@@ -25,34 +25,35 @@ const searchNews = async (helpers) => {
     'Inteligência Artificial'
   ]
 
-  const blacklist = [
-    'https://www.nextbigfuture.com/tag/artificial-intelligence'
-  ]
-
   new CronJob('0 59 23 * * *', async () => {
     const today = moment().format('YYYY-MM-DD')
 
-    const responses = await Promise.all(
-      queries.map(query => newsapi
-        .v2
-        .topHeadlines({
-          q: query,
-          from: today,
-          to: today
-        })
+    try {
+      const responses = await Promise.all(
+        queries.map(query => newsapi
+          .v2
+          .everything({
+            q: query,
+            from: today,
+            to: today,
+            sortBy: 'relevancy',
+            pageSize: 1
+          })
+        )
       )
-    )
 
-    const articles = responses.map(response => response.articles).flat()
-    const urls = helpers
-      .removeRepetitions(articles.map(article => article.url))
-      .filter(url => !blacklist.includes(url))
+      const articles = responses.map(response => response.articles).flat()
+      const urls = helpers
+        .removeRepetitions(articles.map(article => article.url))
 
-    urls.sort(() => Math.random() - 0.5)
+      urls.sort(() => Math.random() - 0.5)
 
-    urls.forEach(url => {
-      channel.sendToQueue(queue, Buffer.from(url))
-    })
+      urls.forEach(url => {
+        channel.sendToQueue(queue, Buffer.from(url))
+      })
+    } catch (error) {
+      console.error(error)
+    }
 
     sleep(1)
   }, null, false, 'America/Sao_Paulo').start()
