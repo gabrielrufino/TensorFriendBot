@@ -12,7 +12,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run lint"
+      "pre-commit": "git-branch-is --not master && npm run lint",
+      "pre-push": "npm test"
     }
   },
   "standard": {
@@ -46,6 +47,7 @@
     "telegraf": "^3.32.0"
   },
   "devDependencies": {
+    "git-branch-is": "^3.1.0",
     "husky": "^3.0.9",
     "nodemon": "^1.19.2",
     "standard": "^14.3.1"

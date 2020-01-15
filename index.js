@@ -15,7 +15,7 @@ routines(bot, helpers)
 events(bot)
 
 bot.catch(error => {
-  console.log('Algo deu errado!', error)
+  console.error('Algo deu errado!', error)
 })
 
 bot.launch()
