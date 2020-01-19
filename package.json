@@ -4,11 +4,11 @@
   "description": "Bot do grupo @tensorflowjs_br do telegram",
   "main": "index.js",
   "scripts": {
-    "test": "jest --passWithNoTests",
     "dev": "nodemon index.js",
     "forever": "forever",
     "lint": "standard",
-    "start": "forever index.js"
+    "start": "forever -l logs.log -o output.log -e errors.log index.js",
+    "test": "jest --passWithNoTests"
   },
   "husky": {
     "hooks": {
