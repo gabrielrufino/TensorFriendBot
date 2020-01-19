@@ -14,8 +14,8 @@ commands(bot)
 routines(bot, helpers)
 events(bot)
 
-bot.catch(error => {
-  console.error('Algo deu errado!', error)
+bot.catch(async error => {
+  console.error('Erro no telegraf\n', error)
 })
 
 bot.launch()
