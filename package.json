@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
+    "deploy:gcloud": "gcloud app deploy gcloud.yaml --stop-previous-version",
+    "deploy:heroku": "git push heroku master",
     "forever": "forever",
     "lint": "standard",
-    "start": "forever -l logs.log -o output.log -e errors.log index.js",
+    "start": "forever -o /tmp/output.log -e /tmp/errors.log index.js",
     "test": "jest --passWithNoTests"
   },
   "husky": {
