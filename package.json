@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon index.js",
+    "deploy:gcloud": "gcloud app deploy gcloud.yaml --stop-previous-version",
     "forever": "forever",
     "lint": "standard",
     "start": "forever -l logs.log -o output.log -e errors.log index.js",
