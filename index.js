@@ -1,5 +1,9 @@
 require('dotenv').config()
 
+const bootstrap = require('./bootstrap')
+
+bootstrap()
+  .then(() => console.log('Deu certo'))
 const Telegraf = require('telegraf')
 const api = require('./src/api')
 const commands = require('./src/commands')
