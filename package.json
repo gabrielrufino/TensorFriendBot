@@ -44,6 +44,7 @@
     "forever": "^1.0.0",
     "jest": "^24.9.0",
     "moment": "^2.24.0",
+    "mongodb": "^3.5.2",
     "newsapi": "^2.4.0",
     "sleep": "^6.1.0",
     "telegraf": "^3.32.0"
