@@ -35,24 +35,24 @@
   "homepage": "https://github.com/gabrielrufino/TensorFriend#readme",
   "dependencies": {
     "@tensorflow-models/mobilenet": "^2.0.4",
-    "@tensorflow/tfjs-node": "^1.4.0",
-    "amqplib": "^0.5.5",
-    "axios": "^0.19.0",
-    "cron": "^1.7.2",
-    "dotenv": "^8.1.0",
+    "@tensorflow/tfjs-node": "^1.7.4",
+    "amqplib": "^0.5.6",
+    "axios": "^0.19.2",
+    "cron": "^1.8.2",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "forever": "^1.0.0",
+    "forever": "^1.0.1",
     "jest": "^24.9.0",
-    "moment": "^2.24.0",
-    "mongodb": "^3.5.2",
+    "moment": "^2.26.0",
+    "mongodb": "^3.5.9",
     "newsapi": "^2.4.0",
-    "sleep": "^6.1.0",
-    "telegraf": "^3.32.0"
+    "sleep": "^6.2.0",
+    "telegraf": "^3.38.0"
   },
   "devDependencies": {
     "git-branch-is": "^3.1.0",
-    "husky": "^3.0.9",
-    "nodemon": "^1.19.2",
-    "standard": "^14.3.1"
+    "husky": "^3.1.0",
+    "nodemon": "^1.19.4",
+    "standard": "^14.3.4"
   }
 }
