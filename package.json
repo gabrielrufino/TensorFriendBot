@@ -44,9 +44,9 @@
     "forever": "^1.0.1",
     "jest": "^24.9.0",
     "moment": "^2.27.0",
-    "mongodb": "^3.5.9",
-    "newsapi": "^2.4.0",
-    "sleep": "^6.2.0",
+    "mongodb": "^3.6.0",
+    "newsapi": "^2.4.1",
+    "sleep": "^6.3.0",
     "telegraf": "^3.38.0"
   },
   "devDependencies": {
