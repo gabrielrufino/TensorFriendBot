@@ -43,8 +43,8 @@
     "express": "^4.17.1",
     "forever": "^1.0.1",
     "jest": "^24.9.0",
-    "moment": "^2.27.0",
-    "mongodb": "^3.6.0",
+    "moment": "^2.29.0",
+    "mongodb": "^3.6.2",
     "newsapi": "^2.4.1",
     "sleep": "^6.3.0",
     "telegraf": "^3.38.0"
