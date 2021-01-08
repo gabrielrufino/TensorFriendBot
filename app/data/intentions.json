@@ -1,0 +1,25 @@
+[
+  {
+    "code": "definition:ml",
+    "alternatives": [
+      "O que é machine learning?",
+      "O que é ML?",
+      "Alguém me explica o que é machine learning"
+    ],
+    "answers": [
+      "Em 1959, Arthur Samuel definiu aprendizado de máquina como o \"campo de estudo que dá aos computadores a habilidade de aprender sem serem explicitamente programados\"",
+      "O aprendizado automático explora o estudo e construção de algoritmos que podem aprender de seus erros e fazer previsões sobre dados"
+    ]
+  },
+  {
+    "code": "definition:neural-network",
+    "alternatives": [
+      "O que é rede neural?",
+      "Alguém me explica o que é uma rede neural",
+      "O que é uma NN?"
+    ],
+    "answers": [
+      "Em ciência da computação e campos relacionados, redes neurais artificiais são modelos computacionais inspirados pelo sistema nervoso central de um animal que são capazes de realizar o aprendizado de máquina bem como o reconhecimento de padrões."
+    ]
+  }
+]
