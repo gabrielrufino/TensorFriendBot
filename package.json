@@ -9,7 +9,7 @@
     "deploy:heroku": "git push heroku master",
     "lint": "standard",
     "start": "forever -o /tmp/output.log -e /tmp/errors.log index.js",
-    "test": "jest --passWithNoTests"
+    "test": "jest"
   },
   "husky": {
     "hooks": {
