@@ -1,6 +1,6 @@
 [
   {
-    "code": "definition:ml",
+    "code": "definition:machine-learning",
     "alternatives": [
       "O que é machine learning?",
       "O que é ML?",
@@ -20,6 +20,17 @@
     ],
     "answers": [
       "Em ciência da computação e campos relacionados, redes neurais artificiais são modelos computacionais inspirados pelo sistema nervoso central de um animal que são capazes de realizar o aprendizado de máquina bem como o reconhecimento de padrões."
+    ]
+  },
+  {
+    "code": "doubt:group-purpose",
+    "alternatives": [
+      "Qual a proposta desse grupo?",
+      "Pra que serve esse grupo?",
+      "O que é esse grupo?"
+    ],
+    "answers": [
+      "A proposta dessa comunidade é o compartilhamento de conhecimentos em torno de TensorFlow, Machine Leaning, Javascript e afins 🧐"
     ]
   }
 ]
