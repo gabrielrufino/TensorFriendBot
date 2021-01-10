@@ -19,7 +19,7 @@ describe('Testing the helper getRandomPosition', () => {
     ).toBeTruthy()
   })
 
-  test('SHould return a number between 0 and array.length', () => {
+  test('Should return a number between 0 and array.length', () => {
     const position = getRandomPosition(array)
 
     expect(position).toBeGreaterThanOrEqual(0)
