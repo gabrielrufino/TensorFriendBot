@@ -11,7 +11,7 @@ const text = context => {
   const firstClassification = classifications[0]
   const lastClassification = classifications[classifications.length - 1]
 
-  if ((firstClassification.value - lastClassification.value) > 0.15) {
+  if ((firstClassification.value - lastClassification.value) > 0.08) {
     const intention = intentions.find(intention => intention.code === firstClassification.label)
     const { answers } = intention
 
