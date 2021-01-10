@@ -4,9 +4,9 @@ const intentions = require('../../data/intentions.json')
 
 const classifier = new natural.BayesClassifier()
 
-intentions.forEach(intention => {
-  intention.alternatives.forEach(alternative => {
-    classifier.addDocument(alternative, intention.code)
+intentions.forEach(({ alternatives, code }) => {
+  alternatives.forEach(alternative => {
+    classifier.addDocument(alternative, code)
   })
 })
 
