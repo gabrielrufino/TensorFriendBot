@@ -1,5 +1,6 @@
 const classifiers = require('../models/classifiers/')
 const intentions = require('../data/intentions.json')
+const { getRandomPosition } = require('../helpers')
 
 const text = context => {
   const { text } = context.update.message
@@ -14,7 +15,7 @@ const text = context => {
     const intention = intentions.find(intention => intention.code === firstClassification.label)
     const { answers } = intention
 
-    const answer = answers[Math.floor(Math.random() * answers.length)]
+    const answer = answers[getRandomPosition(answers)]
     context.reply(answer)
   }
 }
