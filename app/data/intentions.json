@@ -23,6 +23,17 @@
     ]
   },
   {
+    "code": "definition:tensorflow.js",
+    "alternatives": [
+      "O que é TensorFlow.js?",
+      "O que é TensorFlow?",
+      "O que é tfjs?"
+    ],
+    "answers": [
+      "O TensorFlow.js é uma biblioteca de JavaScript para treinar e implantar modelos de machine learning no navegador e no Node.js."
+    ]
+  },
+  {
     "code": "doubt:group-purpose",
     "alternatives": [
       "Qual a proposta desse grupo?",
