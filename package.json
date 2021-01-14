@@ -44,7 +44,7 @@
     "jest": "^24.9.0",
     "moment": "^2.29.1",
     "mongodb": "^3.6.3",
-    "natural": "^2.4.1",
+    "natural": "^2.4.4",
     "newsapi": "^2.4.1",
     "sleep": "^6.3.0",
     "telegraf": "^3.38.0"
