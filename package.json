@@ -34,7 +34,7 @@
   "homepage": "https://github.com/gabrielrufino/TensorFriend#readme",
   "dependencies": {
     "@tensorflow-models/mobilenet": "^2.0.4",
-    "@tensorflow/tfjs-node": "^2.8.3",
+    "@tensorflow/tfjs-node": "^2.8.4",
     "amqplib": "^0.5.6",
     "axios": "^0.21.1",
     "cron": "^1.8.2",
@@ -44,7 +44,7 @@
     "jest": "^24.9.0",
     "moment": "^2.29.1",
     "mongodb": "^3.6.3",
-    "natural": "^2.4.4",
+    "natural": "^2.4.5",
     "newsapi": "^2.4.1",
     "sleep": "^6.3.0",
     "telegraf": "^3.38.0"
