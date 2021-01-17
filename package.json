@@ -4,7 +4,7 @@
   "description": "Bot do grupo @tensorflowjs_br do telegram",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js",
+    "dev": "nodemon index.js -i db.json",
     "deploy:gcloud": "gcloud app deploy gcloud.yaml --stop-previous-version",
     "deploy:heroku": "git push heroku master",
     "lint": "standard",
