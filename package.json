@@ -47,7 +47,7 @@
     "natural": "^2.4.5",
     "newsapi": "^2.4.1",
     "sleep": "^6.3.0",
-    "telegraf": "^3.38.0"
+    "telegraf": "^4.0.1"
   },
   "devDependencies": {
     "git-branch-is": "^3.1.0",
