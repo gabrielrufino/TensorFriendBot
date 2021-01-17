@@ -1,4 +1,4 @@
-const Telegraf = require('telegraf')
+const { Telegraf, session, MemorySessionStore } = require('telegraf')
 
 const api = require('./api')
 const commands = require('./commands')
@@ -8,6 +8,8 @@ const routines = require('./routines')
 
 function app () {
   const bot = new Telegraf(process.env.BOT_TOKEN)
+
+  bot.use(session())
 
   api()
   commands(bot)
