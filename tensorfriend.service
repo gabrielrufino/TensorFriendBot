@@ -9,7 +9,7 @@ Type=oneshot
 RemainAfterExit=yes
 Environment=NPM=path/to/npm
 Environment=FOLDER=path/to/tensorfriend/folder
-ExecStart=cd $FOLDER && $NPM start
+ExecStart=$NPM start --prefix $FOLDER
 
 [Install]
 WantedBy=multi-user.target
