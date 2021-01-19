@@ -1,4 +1,4 @@
-const { Telegraf, session, MemorySessionStore } = require('telegraf')
+const { Telegraf, session } = require('telegraf')
 
 const api = require('./api')
 const commands = require('./commands')
