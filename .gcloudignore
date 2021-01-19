@@ -14,6 +14,7 @@
 .github
 .gitignore
 docker-compose.yml
+tensorfriend.service
 
 # Node.js dependencies:
 node_modules/

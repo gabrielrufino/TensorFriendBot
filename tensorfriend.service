@@ -1,0 +1,15 @@
+[Unit]
+Description=TensorFriend service
+After=network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+Environment=NPM=path/to/npm
+Environment=FOLDER=path/to/tensorfriend/folder
+ExecStart=cd $FOLDER && $NPM start
+
+[Install]
+WantedBy=multi-user.target
