@@ -1,8 +1,7 @@
-const mongodb = require('mongodb')
+const { MongoClient } = require('mongodb')
 
 async function database () {
   const { DATABASE_NAME, DATABASE_URL } = process.env
-  const MongoClient = mongodb.MongoClient
 
   const client = new MongoClient(DATABASE_URL, { useUnifiedTopology: true })
 
