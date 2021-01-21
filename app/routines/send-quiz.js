@@ -1,6 +1,5 @@
 const CronJob = require('cron').CronJob
 
-const db = require('../db')
 const quizzes = require('../data/quizzes.json')
 const { generateQuizPodium, getRandomPosition } = require('../helpers')
 
@@ -39,19 +38,6 @@ const sendQuiz = (bot, database) => {
         podium_message_id: podiumMessageId,
         poll_id: pollId
       })
-    db.get('quizzes_history')
-      .push({
-        quiz,
-        podium: {
-          first: null,
-          second: null,
-          third: null
-        },
-        quiz_message_id: quizMessageId,
-        podium_message_id: podiumMessageId,
-        poll_id: pollId
-      })
-      .write()
   }).start()
 }
 
