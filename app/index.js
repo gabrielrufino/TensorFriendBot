@@ -6,7 +6,7 @@ const events = require('./events')
 const helpers = require('./helpers')
 const routines = require('./routines')
 
-function app () {
+function app ({ database }) {
   const bot = new Telegraf(process.env.BOT_TOKEN)
 
   bot.use(session())
