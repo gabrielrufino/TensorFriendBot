@@ -4,10 +4,11 @@ const db = require('../db')
 const quizzes = require('../data/quizzes.json')
 const { generateQuizPodium, getRandomPosition } = require('../helpers')
 
-const sendQuiz = (bot) => {
+const sendQuiz = (bot, database) => {
   const { GROUP_CHAT_ID } = process.env
 
-  new CronJob('0 0 10 * * 2', async () => {
+  // new CronJob('0 0 10 * * 2', async () => {
+  new CronJob('0 * * * * *', async () => {
     const quiz = quizzes[getRandomPosition(quizzes)]
     const { question, options } = quiz
 
@@ -25,6 +26,19 @@ const sendQuiz = (bot) => {
       { reply_to_message_id: quizMessageId }
     )
 
+    database
+      .collection('quizzes_history')
+      .insertOne({
+        quiz,
+        podium: {
+          first: null,
+          second: null,
+          third: null
+        },
+        quiz_message_id: quizMessageId,
+        podium_message_id: podiumMessageId,
+        poll_id: pollId
+      })
     db.get('quizzes_history')
       .push({
         quiz,

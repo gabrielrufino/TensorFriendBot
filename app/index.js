@@ -13,8 +13,8 @@ function app ({ database }) {
 
   api()
   commands(bot)
-  routines(bot, helpers)
-  events(bot)
+  routines(bot, helpers, database)
+  events(bot, database)
 
   bot.catch(error => {
     console.error('Erro no telegraf\n', error)

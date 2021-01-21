@@ -4,11 +4,11 @@ const searchNews = require('./search-news')
 const sendQuiz = require('./send-quiz')
 const sendNews = require('./send-news')
 
-const routines = (bot, helpers) => {
+const routines = (bot, helpers, database) => {
   askForContribution(bot)
   insight(bot)
   searchNews(helpers)
-  sendQuiz(bot)
+  sendQuiz(bot, database)
   sendNews(bot)
 }
 
