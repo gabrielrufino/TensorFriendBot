@@ -1,7 +1,14 @@
+'use strict'
+
 const joinName = require('./join-name')
 
 const empty = '[Aguardando você]'
 
+/**
+ * Generate the quiz podium message from podium object
+ * @param {Object} podium
+ * @returns {string}
+ */
 const generateQuizPodium = (podium = {}) => {
   return `
 Pódio:

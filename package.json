@@ -4,7 +4,7 @@
   "description": "Bot do grupo @tensorflowjs_br do telegram",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.js -i db.json",
+    "dev": "nodemon index.js",
     "deploy:gcloud": "gcloud app deploy gcloud.yaml --stop-previous-version",
     "deploy:heroku": "git push heroku master",
     "lint": "standard",
@@ -42,7 +42,6 @@
     "express": "^4.17.1",
     "forever": "^1.0.1",
     "jest": "^24.9.0",
-    "lowdb": "^1.0.0",
     "moment": "^2.29.1",
     "mongodb": "^3.6.3",
     "natural": "^2.4.5",
@@ -53,6 +52,7 @@
   "devDependencies": {
     "git-branch-is": "^3.1.0",
     "husky": "^3.1.0",
+    "jsdoc": "^3.6.6",
     "nodemon": "^1.19.4",
     "standard": "^14.3.4"
   }

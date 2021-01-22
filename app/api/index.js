@@ -1,3 +1,5 @@
+'use strict'
+
 const api = () => {
   const express = require('express')
 

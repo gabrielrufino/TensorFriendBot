@@ -1,7 +1,8 @@
-const db = require('../db')
+'use strict'
+
 const { generateQuizPodium } = require('../helpers')
 
-const pollAnswer = bot => context => {
+const pollAnswer = (bot, database) => async context => {
   const { GROUP_CHAT_ID } = process.env
 
   const {
@@ -10,32 +11,34 @@ const pollAnswer = bot => context => {
     user
   } = context.update.poll_answer
 
-  const [{ quiz: { options }, podium, podium_message_id: podiumMessageId }] = db
-    .get('quizzes_history')
-    .filter({ poll_id: pollId })
-    .value()
+  try {
+    const { quiz: { options }, podium, podium_message_id: podiumMessageId } = await database
+      .collection('quizzes_history')
+      .findOne({ poll_id: pollId })
 
-  if (optionIds[0] === options.findIndex(({ correct }) => correct)) {
-    if (!podium.first) {
-      podium.first = user
-    } else if (!podium.second) {
-      podium.second = user
-    } else if (!podium.third) {
-      podium.third = user
+    if (optionIds[0] === options.findIndex(({ correct }) => correct)) {
+      if (!podium.first) {
+        podium.first = user
+      } else if (!podium.second) {
+        podium.second = user
+      } else if (!podium.third) {
+        podium.third = user
+      }
     }
+
+    bot.telegram.editMessageText(
+      GROUP_CHAT_ID,
+      podiumMessageId,
+      null,
+      generateQuizPodium(podium)
+    )
+
+    database
+      .collection('quizzes_history')
+      .updateOne({ podium_message_id: podiumMessageId }, { $set: { podium } })
+  } catch (error) {
+    console.error(error)
   }
-
-  bot.telegram.editMessageText(
-    GROUP_CHAT_ID,
-    podiumMessageId,
-    null,
-    generateQuizPodium(podium)
-  )
-
-  db.get('quizzes_history')
-    .find({ podium_message_id: podiumMessageId })
-    .assign({ podium })
-    .write()
 }
 
 module.exports = pollAnswer

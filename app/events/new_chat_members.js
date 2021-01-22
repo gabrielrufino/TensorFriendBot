@@ -1,3 +1,5 @@
+'use strict'
+
 const newChatMembers = context => {
   const { first_name: firstName } = context.from
 
