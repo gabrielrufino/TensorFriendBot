@@ -52,6 +52,7 @@
   "devDependencies": {
     "git-branch-is": "^3.1.0",
     "husky": "^3.1.0",
+    "jsdoc": "^3.6.6",
     "nodemon": "^1.19.4",
     "standard": "^14.3.4"
   }
