@@ -8,8 +8,8 @@ const { generateQuizPodium, getRandomPosition } = require('../helpers')
 const sendQuiz = (bot, database) => {
   const { GROUP_CHAT_ID } = process.env
 
-  // new CronJob('0 0 10 * * 2', async () => {
-  new CronJob('0 * * * * *', async () => {
+  new CronJob('0 10 18 * * 5', async () => {
+  // new CronJob('0 * * * * *', async () => {
     const quiz = quizzes[getRandomPosition(quizzes)]
     const { question, options } = quiz
 
