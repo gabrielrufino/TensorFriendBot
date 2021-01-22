@@ -1,3 +1,5 @@
+'use strict'
+
 const admins = require('./admins')
 const ping = require('./ping')
 

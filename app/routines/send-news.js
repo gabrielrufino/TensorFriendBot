@@ -1,3 +1,5 @@
+'use strict'
+
 const amqp = require('amqplib')
 const CronJob = require('cron').CronJob
 const { sleep } = require('sleep')

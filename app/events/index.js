@@ -1,3 +1,5 @@
+'use strict'
+
 const leftChatMember = require('./left_chat_member')
 const newChatMembers = require('./new_chat_members')
 const photo = require('./photo')

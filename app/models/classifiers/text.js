@@ -1,3 +1,5 @@
+'use strict'
+
 const natural = require('natural')
 
 const intentions = require('../../data/intentions.json')

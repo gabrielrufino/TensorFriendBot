@@ -1,3 +1,5 @@
+'use strict'
+
 const classifiers = require('../models/classifiers/')
 const intentions = require('../data/intentions.json')
 const { getRandomPosition } = require('../helpers')

@@ -1,3 +1,5 @@
+'use strict'
+
 const CronJob = require('cron').CronJob
 
 const insight = (bot) => {

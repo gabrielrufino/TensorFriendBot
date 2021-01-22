@@ -1,3 +1,5 @@
+'use strict'
+
 const joinName = require('./join-name')
 
 const empty = '[Aguardando você]'

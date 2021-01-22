@@ -1,3 +1,5 @@
+'use strict'
+
 const axios = require('axios')
 const mobilenet = require('@tensorflow-models/mobilenet')
 const tf = require('@tensorflow/tfjs-node')

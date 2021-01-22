@@ -1,3 +1,5 @@
+'use strict'
+
 const askForContribution = require('./ask-for-contribution')
 const insight = require('./insight')
 const searchNews = require('./search-news')

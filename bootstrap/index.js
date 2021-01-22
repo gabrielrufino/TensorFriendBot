@@ -1,3 +1,5 @@
+'use strict'
+
 const database = require('./database')
 const environment = require('./environment')
 

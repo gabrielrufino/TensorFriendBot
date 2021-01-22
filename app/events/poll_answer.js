@@ -1,3 +1,5 @@
+'use strict'
+
 const { generateQuizPodium } = require('../helpers')
 
 const pollAnswer = (bot, database) => async context => {

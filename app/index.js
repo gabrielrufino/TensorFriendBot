@@ -1,3 +1,5 @@
+'use strict'
+
 const { Telegraf, session } = require('telegraf')
 
 const api = require('./api')

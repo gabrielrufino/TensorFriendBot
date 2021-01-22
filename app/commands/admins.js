@@ -1,3 +1,5 @@
+'use strict'
+
 const admins = ({ bot }) => {
   const { GROUP_CHAT_ID } = process.env
 
