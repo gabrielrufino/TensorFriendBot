@@ -2,7 +2,6 @@
 
 const amqp = require('amqplib')
 const CronJob = require('cron').CronJob
-const { sleep } = require('sleep')
 
 const sendNews = async (bot) => {
   const { AMQP_URL, GROUP_CHAT_ID } = process.env
@@ -20,8 +19,6 @@ const sendNews = async (bot) => {
     if (news) {
       bot.telegram.sendMessage(GROUP_CHAT_ID, news.content.toString())
     }
-
-    sleep(1)
   }, null, false, 'America/Sao_Paulo').start()
 }
 
