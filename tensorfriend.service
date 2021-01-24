@@ -7,9 +7,8 @@ StartLimitIntervalSec=0
 [Service]
 Type=oneshot
 RemainAfterExit=yes
-Environment=NPM=path/to/npm
-Environment=FOLDER=path/to/tensorfriend/folder
-ExecStart=$NPM start --prefix $FOLDER
+WorkingDirectory=/path/to/TensorFriend/folder
+ExecStart=/path/to/npm start
 
 [Install]
 WantedBy=multi-user.target
