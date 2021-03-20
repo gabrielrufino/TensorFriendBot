@@ -1,5 +1,6 @@
 {
   "name": "tensorfriend",
+  "private": true,
   "version": "1.0.0",
   "description": "Bot do grupo @tensorflowjs_br do telegram",
   "main": "index.js",
