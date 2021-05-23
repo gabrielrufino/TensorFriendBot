@@ -1,8 +1,7 @@
 'use strict'
 
-const app = require('./app')
 const bootstrap = require('./bootstrap')
 
 bootstrap()
-  .then(app)
+  .then(require('./app'))
   .catch(console.error)

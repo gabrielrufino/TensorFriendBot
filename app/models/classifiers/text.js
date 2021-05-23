@@ -2,16 +2,23 @@
 
 const natural = require('natural')
 
-const intentions = require('../../data/intentions.json')
+const TensorFriendAPI = require('../../services/TensorFriendAPI')
 
 const classifier = new natural.BayesClassifier()
 
-intentions.forEach(({ alternatives, code }) => {
-  alternatives.forEach(alternative => {
-    classifier.addDocument(alternative, code)
-  })
-})
+TensorFriendAPI
+  .get('intentions')
+  .then(({ body: intentions }) => {
+    intentions.forEach(({ alternatives, code }) => {
+      alternatives.forEach(alternative => {
+        classifier.addDocument(alternative, code)
+      })
+    })
 
-classifier.train()
+    classifier.train()
+  })
+  .catch(() => {
+    console.error('Error when training intentions model')
+  })
 
 module.exports = classifier
