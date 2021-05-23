@@ -8,7 +8,6 @@ const text = context => {
   const { text } = context.update.message
 
   const classifications = classifiers.text.getClassifications(text)
-  console.log(classifications)
 
   const firstClassification = classifications[0]
   const lastClassification = classifications[classifications.length - 1]
