@@ -35,7 +35,7 @@
   "homepage": "https://github.com/gabrielrufino/TensorFriend#readme",
   "dependencies": {
     "@tensorflow-models/mobilenet": "^2.1.0",
-    "@tensorflow/tfjs-node": "^3.6.1",
+    "@tensorflow/tfjs-node": "^3.7.0",
     "amqplib": "^0.8.0",
     "axios": "^0.21.1",
     "cron": "^1.8.2",
