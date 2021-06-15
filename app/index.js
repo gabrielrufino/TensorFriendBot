@@ -2,18 +2,18 @@
 
 const { Telegraf, session } = require('telegraf')
 
-const api = require('./api')
+// const api = require('./api')
 const commands = require('./commands')
 const events = require('./events')
 const helpers = require('./helpers')
 const routines = require('./routines')
 
-function app ({ database }) {
+function app ({ database, cooldown }) {
   const bot = new Telegraf(process.env.BOT_TOKEN)
 
   bot.use(session())
 
-  api()
+  // api()
   commands(bot)
   routines(bot, helpers, database)
   events(bot, database)
@@ -24,6 +24,7 @@ function app ({ database }) {
 
   bot.launch()
     .then(() => {
+      cooldown({ bot })
       console.log('TensorFriend funcionando!')
     })
     .catch(error => {
