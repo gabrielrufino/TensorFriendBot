@@ -45,10 +45,10 @@
     "got": "^11.8.2",
     "jest": "^24.9.0",
     "moment": "^2.29.1",
-    "mongodb": "^3.6.9",
+    "mongodb": "^3.6.10",
     "natural": "^2.4.5",
     "newsapi": "^2.4.1",
-    "telegraf": "^4.3.0"
+    "telegraf": "^4.4.0"
   },
   "devDependencies": {
     "git-branch-is": "^3.1.0",
