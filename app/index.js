@@ -2,7 +2,6 @@
 
 const { Telegraf, session } = require('telegraf')
 
-// const api = require('./api')
 const commands = require('./commands')
 const events = require('./events')
 const helpers = require('./helpers')
@@ -13,7 +12,6 @@ function app ({ database, cooldown }) {
 
   bot.use(session())
 
-  // api()
   commands(bot)
   routines(bot, helpers, database)
   events(bot, database)
